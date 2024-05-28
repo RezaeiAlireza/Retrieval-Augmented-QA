@@ -34,6 +34,7 @@ It integrates various libraries for PDF processing, text extraction, natural lan
 - FPDF: For creating PDF files with structured text output.
 - langchain: For integrating with Hugging Face's language model and vectorization tasks.
 - HuggingFaceTransformers: For utilizing pre-trained language models from Hugging Face's model hub.
+- NOTE that you need to get an Access Tokens from [Huggingface](https://huggingface.co/) and save it in the root folder of your notebook in ".env" file.
 
 ## Future Improvements:
 
@@ -44,8 +45,6 @@ It integrates various libraries for PDF processing, text extraction, natural lan
 ## Contributions:
 
 Contributions to this project, whether in the form of bug fixes, enhancements, or new features, are highly encouraged and appreciated. Feel free to submit pull requests or open issues on the project's repository.
-
-## License:
 
 ## Acknowledgments:
 
