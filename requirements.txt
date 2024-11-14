@@ -1,0 +1,10 @@
+fitz==1.18.0           # For PDF processing (PyMuPDF)
+pytesseract==0.3.10     # For Optical Character Recognition (OCR)
+spacy==3.5.0            # For natural language processing tasks
+fpdf==1.7.2             # For generating PDF files from structured text
+langchain==0.0.161      # For chaining LangChain components and working with HuggingFace models
+langchain-community==0.0.4  # For HuggingFace-specific integration in LangChain
+chromadb==0.3.2         # For creating and managing a Chroma vector store
+huggingface_hub==0.15.1 # For interacting with HuggingFace's model hub
+transformers==4.33.0    # For using pre-trained transformers from HuggingFace
+python-dotenv==1.0.0    # For loading environment variables from .env files
