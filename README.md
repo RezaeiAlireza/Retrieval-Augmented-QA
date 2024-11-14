@@ -1,51 +1,102 @@
-# PDF Text Extraction and Question Answering Pipeline
+# Document-based Question Answering Pipeline with LangChain and HuggingFace
 
-This Python project encompasses a streamlined pipeline for extracting text from scanned-PDF documents, structuring it, and then performing question answering tasks using state-of-the-art language models.
-It integrates various libraries for PDF processing, text extraction, natural language processing (NLP), and question answering (QA). 
-
-## Functions:
-
-1. Converting scanned-PDF to structured-PDF
-2. Chat with your PDF Using Langchain and LLM
+This Python project implements a document processing pipeline that extracts text from scanned PDF documents, structures it, and enables question answering (QA) based on the extracted content. The pipeline integrates powerful libraries and models, including LangChain, HuggingFace, spaCy, and more.
 
 ## Features:
 
-- PDF Processing: Utilizes the fitz library to convert PDF pages into images, which are then processed using pytesseract to extract text.
+#### PDF Processing:
 
-- Text Structuring: Employs the spaCy library for NLP tasks such as sentence segmentation, providing structured text output.
+- Converts scanned PDF pages into images using the fitz library (PyMuPDF).
+- Applies OCR with pytesseract to extract text from the images.
 
-- PDF Output: Generates a new PDF file with structured text, maintaining the original line formatting of the source PDF document.
+#### Text Structuring:
 
-- Question Answering: Integrates with Hugging Face's powerful language model (LLM) via the langchain library, enabling QA tasks based on the extracted text.
+- Uses the spaCy library to process the extracted text and segment it into sentences.
+- Outputs structured, organized text for further use.
 
-- Vectorization and Retrieval: Converts the extracted text into vector representations using Hugging Face embeddings, then creates a vector store for efficient retrieval using the Chroma module.
+#### PDF Output:
+
+- Generates a new PDF file with the structured text, preserving the original layout and formatting from the source PDF.
+
+#### Question Answering (QA):
+
+- Integrates with Hugging Face's language model (LLM) via the LangChain library, enabling natural language question answering based on the structured text.
+
+#### Embedding and Retrieval:
+
+- Converts the extracted text into vector embeddings using HuggingFace's embeddings model.
+- Creates a Chroma vector store to efficiently retrieve relevant information from the extracted text for QA tasks.
 
 ## Usage:
-
-1. Text Extraction: Supply a PDF document as input, and the pipeline will automatically extract text, structure it, and output a new PDF file with the structured text.
-
-2. Question Answering: Pose questions to the pipeline, and it will utilize the pre-trained language model to provide relevant answers based on the extracted text.
+1. Text Extraction:
+- Provide a scanned PDF document as input.
+- The pipeline will automatically extract text, structure it, and output a new PDF with the structured text.
+2. Question Answering:
+- Pose questions to the system based on the extracted text.
+- The pipeline leverages a pre-trained HuggingFace language model (fine-tuned for question answering) to provide relevant answers.
 
 ## Dependencies:
 
-- fitz: For PDF processing and image extraction.
-- pytesseract: For optical character recognition (OCR) to extract text from images.
-- spaCy: For natural language processing tasks such as sentence segmentation.
-- FPDF: For creating PDF files with structured text output.
-- langchain: For integrating with Hugging Face's language model and vectorization tasks.
-- HuggingFaceTransformers: For utilizing pre-trained language models from Hugging Face's model hub.
-- NOTE that you need [huggingface](https://huggingface.co) access token set as env var.
+The following Python libraries are used in this project:
+
+- fitz: For PDF processing and converting pages to images.
+- pytesseract: For Optical Character Recognition (OCR) to extract text from images.
+- spaCy: For text processing tasks like sentence segmentation and structuring.
+- FPDF: For generating PDF files from structured text.
+- langchain: For integrating HuggingFace's pre-trained language models and embedding-based tasks.
+- HuggingFaceTransformers: For working with HuggingFace models and transformers.
+- Chroma: For storing and retrieving vector embeddings for efficient document search.
+
+### Important:
+
+Ensure that you have a valid HuggingFace API token. This token must be set as an environment variable (TKN) for using the language model and embeddings.
+
+## Installation:
+
+To set up the project, clone the repository and install the required dependencies:
+
+```bash
+git clone <repository_url>
+cd <repository_directory>
+pip install -r requirements.txt
+```
+
+You will also need to install Tesseract for OCR functionality. Instructions for installation can be found in the Tesseract documentation.
+
+## Example Workflow:
+
+1. Text Extraction:
+
+- Input a PDF file to extract and structure text.
+- The output is a new PDF file with structured text.
+
+2. Question Answering:
+
+- After text extraction, interact with the system by asking questions based on the PDF content.
+- The system uses retrieval-augmented generation (RAG) to fetch relevant chunks of text and provide precise answers.
 
 ## Future Improvements:
 
-- Error Handling: Enhance error handling mechanisms to gracefully handle edge cases and errors during PDF processing and QA tasks.
-- Performance Optimization: Optimize the pipeline for efficiency, especially when dealing with large PDF documents and complex QA queries.
-- Expand QA Capabilities: Extend question answering capabilities by fine-tuning the language model on domain-specific data or incorporating multi-step reasoning.
+- Error Handling: Enhance error handling to manage edge cases during PDF processing and QA.
+- Performance Optimization: Speed up the pipeline, especially for large PDFs and complex queries.
 
-## Contributions:
+## Contributing:
 
-Contributions to this project, whether in the form of bug fixes, enhancements, or new features, are highly encouraged and appreciated. Feel free to submit pull requests or open issues on the project's repository.
+Contributions are welcome! You can contribute by:
+
+- Reporting issues or bugs.
+- Submitting pull requests for bug fixes or feature enhancements.
+- Providing suggestions to improve performance or features.
+
+Feel free to open issues or submit pull requests via the GitHub repository.
 
 ## Acknowledgments:
 
-This project builds upon the efforts of various open-source libraries, without which it would not have been possible. Special thanks to the developers of spaCy, pytesseract, langchain, and other dependencies.
+This project uses several powerful open-source libraries and models:
+
+- spaCy: For text processing.
+- pytesseract: For OCR-based text extraction.
+- LangChain: For creating a pipeline with HuggingFace models.
+- HuggingFace: For language models and embeddings.
+
+We acknowledge the efforts of all the contributors to these libraries.
