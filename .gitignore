@@ -1,0 +1,7 @@
+.env
+scansmpl.jpg
+scansmpl.pdf
+output.pdf
+p_dir/
+*.pyc
+venv/
