@@ -56,8 +56,8 @@ Ensure that you have a valid HuggingFace API token. This token must be set as an
 To set up the project, clone the repository and install the required dependencies:
 
 ```bash
-git clone <repository_url>
-cd <repository_directory>
+git clone https://github.com/RezaeiAlireza/Retrieval-Augmented-QA.git
+cd Retrieval-Augmented-QA
 pip install -r requirements.txt
 ```
 
