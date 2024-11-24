@@ -75,6 +75,10 @@ You will also need to install Tesseract for OCR functionality. Instructions for 
 - After text extraction, interact with the system by asking questions based on the PDF content.
 - The system uses retrieval-augmented generation (RAG) to fetch relevant chunks of text and provide precise answers.
 
+## Demo
+
+![ezgif-4-005ca5f08f](https://github.com/user-attachments/assets/92b949b9-b4b2-4145-a30a-2cdca33e3056)
+
 ## Future Improvements:
 
 - Error Handling: Enhance error handling to manage edge cases during PDF processing and QA.
